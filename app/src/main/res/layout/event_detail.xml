@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gr"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/app_bar_color">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/imgBackEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="-10dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_arrow_back_black_24dp" />
+
+                <TextView
+                    android:id="@+id/txtAct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/imgBackEvent"
+                    android:padding="5dp"
+                    android:text="Events"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imgOption"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/imgOption"
+                    android:src="@drawable/ic_search_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/imgOption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_more_vert_black_24dp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <RelativeLayout
+        android:id="@+id/layoutEventDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layoutImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="4dp">
+
+            <ImageView
+                android:id="@+id/imgEvent"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/txtTitleEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imgEvent"
+                android:layout_margin="20dp"
+                android:clickable="true"
+                android:maxLines="2"
+                android:text="Title Event"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:id="@+id/layoutLocation"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgEvent"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:textSize="16sp"
+                    android:id="@+id/txtLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/imgLocation"
+                    android:text="Location"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtLocationEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtLocation"
+                    android:layout_marginTop="3dp"
+                    android:textSize="16sp"
+                    android:layout_toRightOf="@+id/imgLocation"
+                    android:text="location" />
+
+
+                <ImageView
+                    android:id="@+id/imgLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/ic_place_black_24dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutLocation"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:textSize="16sp"
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/imgDate"
+                    android:text="Date"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:textSize="16sp"
+                    android:id="@+id/txtDateEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtDate"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@+id/imgDate"
+                    android:text="Date" />
+
+
+                <ImageView
+                    android:id="@+id/imgDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/ic_timelapse_black_24dp" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/detailEvent"
+            android:layout_below="@+id/layoutImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Event Details"
+                android:textColor="@color/back" />
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Event Details"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/detailEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/white">
+            <LinearLayout
+                android:layout_gravity="center_vertical"
+               android:layout_margin="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_share_black_24dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Share"/>
+
+            </LinearLayout>
+            <LinearLayout
+               android:layout_margin="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_collections_black_24dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Photo Gallery"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>
+

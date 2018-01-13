@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.phppoets.newapp.Activity.RegisterActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:padding="5dp">
+
+        <EditText
+            android:maxLines="1"
+            android:maxLength="15"
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_round"
+            android:hint="Name"
+            android:inputType="text"
+            android:padding="3dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editName"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_round"
+            android:hint="Mobile"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="3dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:maxLength="10"
+            android:maxLines="1"
+            android:id="@+id/editUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editMobile"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_round"
+            android:hint="UserName"
+            android:padding="3dp"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:imeOptions="actionNext"/>
+
+        <EditText
+            android:maxLength="10"
+            android:id="@+id/editPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editUser"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_round"
+            android:hint="Password"
+            android:inputType="numberPassword"
+            android:padding="3dp"
+            android:textSize="20sp" />
+
+        <Button
+            android:elevation="2dp"
+            android:background="@drawable/edittext_round"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/editPass"
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"/>
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/btnRegister"
+            android:id="@+id/txtOr"
+            android:text="OR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txtOr"
+            android:id="@+id/txtLogin"
+            android:text="Login"
+            android:textColor="@color/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

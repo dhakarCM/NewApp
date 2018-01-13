@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">NewApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textView">This control is used to display text to the user.</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="action_notification"></string>
+    <string name="register">Register</string>
+    <string name="account">Already Have an Account? Sign In</string>
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_friends">Friends</string>
+    <string name="nav_item_notifications">Messages</string>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_friends</item>
+        <item>@string/nav_item_notifications</item>
+    </string-array>
+
+    <string name="title_messages">Messages</string>
+    <string name="title_friends">Friends</string>
+    <string name="title_home">Home</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="fragment">fragment example one fragment </string>
+    <string name="of_commerce_industry"><![CDATA[of Commerce & Industry]]></string>
+    <string name="udaipur_chamber">Udaipur Chamber</string>
+    <string name="our_initiatives">Our Initiatives</string>
+    <string name="read_more">Read More</string>
+    <string name="advertisement">Advertisement</string>
+    <string name="description">description</string>
+    <string name="event">Event</string>
+    <string name="title_activity_maps">Map</string>
+        <string name="google_maps_key">AIzaSyB2uHP8Ptix9g-954oYWAKkdnHNMQR4GLI</string>
+
+    <string name="facebook_app_id">166830907267334</string>
+    <string name="fb_login_protocol_scheme">fb166830907267334</string>
+</resources>

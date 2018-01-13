@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp">
+
+        <ImageView
+            android:clickable="true"
+            android:layout_margin="10dp"
+            android:id="@+id/imgEvent"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+
+        <RelativeLayout
+            android:id="@+id/dateLayout"
+            android:layout_width="65dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/imgEvent"
+            android:layout_margin="10dp"
+            android:background="@drawable/round"
+            android:gravity="center_vertical"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="23"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/txtMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtDate"
+                android:gravity="center_horizontal"
+                android:maxLength="3"
+                android:text="Jun"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:clickable="true"
+            android:id="@+id/txtTitleEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgEvent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/dateLayout"
+            android:maxLines="2"
+            android:text="Title Event"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtTimeEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTitleEvent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/dateLayout"
+            android:text="Time"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:id="@+id/txtLocationEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTitleEvent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/txtTimeEvent"
+            android:maxLines="2"
+            android:text="Location"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

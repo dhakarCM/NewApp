@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.phppoets.newapp.Activity.SplashActivity">
+
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:src="@mipmap/ic_launcher" />-->
+    <!--</RelativeLayout>-->
+
+    <!--<TextView-->
+        <!--android:textStyle="bold"-->
+        <!--android:fontFamily="casual"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/udaipur_chamber"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textSize="30sp"-->
+        <!--android:focusableInTouchMode="true" />-->
+
+    <!--<TextView-->
+        <!--android:textStyle="bold"-->
+        <!--android:fontFamily="casual"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/of_commerce_industry"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textSize="20sp" />-->
+
+</LinearLayout>
