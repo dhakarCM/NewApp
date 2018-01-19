@@ -16,9 +16,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * Created by user on 11/10/2017.
  */
@@ -64,16 +61,12 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.MyViewHolder> 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.imgBlog)
         ImageView imgBlog;
-        @BindView(R.id.txtTitle)
         TextView txtTitle;
-        @BindView(R.id.txtContent)
         TextView txtContent;
 
         public MyViewHolder(View view) {
             super(view);
-            ButterKnife.bind(this, view);
             txtTitle = (TextView) view.findViewById(R.id.txtTitle);
             txtContent = (TextView) view.findViewById(R.id.txtContent);
             imgBlog = (ImageView) view.findViewById(R.id.imgBlog);

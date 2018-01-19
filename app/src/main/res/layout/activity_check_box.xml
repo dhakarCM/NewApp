@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/cooLayout"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_vertical"
-    tools:context="com.phppoets.newapp.Activity.CheckBoxActivity">
+    tools:context=".Activity.ChatActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -14,33 +15,37 @@
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical">
-            <ImageView
-                android:layout_centerVertical="true"
-                android:id="@+id/imgBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow_back_black_24dp"
-                android:padding="5dp"/>
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/imgBack"
-                android:id="@+id/txtAct"
-                android:padding="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Check Box Activity"
-                android:textColor="@color/white" />
-            <ImageView
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_more_vert_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_arrow_back_black_24dp" />
+
+                <TextView
+                    android:id="@+id/txtAct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/imgBack"
+                    android:padding="5dp"
+                    android:text="Chat message"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_more_vert_black_24dp" />
             </RelativeLayout>
 
         </android.support.v7.widget.Toolbar>
@@ -48,54 +53,46 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
+    <RelativeLayout
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:id="@+id/linear"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:src="@drawable/ic_menu_send"
+        android:tint="@color/white" />
 
-        <CheckBox
-            android:id="@+id/checkbox1"
+        <android.support.design.widget.TextInputLayout
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/fab"
+            android:layout_alignParentStart="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="2dp"
-            android:text="Red"
-            android:textSize="25dp" />
+            android:layout_alignParentLeft="true">
 
-        <CheckBox
-            android:id="@+id/checkbox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="2dp"
-            android:text="Green"
-            android:textSize="25dp" />
+            <EditText
+                android:id="@+id/input"
+                android:hint="Message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <CheckBox
-            android:id="@+id/checkbox3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="2dp"
-            android:text="Blue"
-            android:textSize="25dp" />
+        </android.support.design.widget.TextInputLayout>
 
-        <Button
-            android:id="@+id/button"
+        <ListView
+            android:id="@+id/listOfMsg"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/fab"
+            android:layout_marginBottom="16dp"
+            android:dividerHeight="16dp"
+            android:divider="@color/transparent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linear"
-            android:layout_margin="20dp"
-            android:background="@drawable/edittext_round"
-            android:onClick="ClickMe"
-            android:text="Click  Me" />
-
-    </LinearLayout>
-
-
-
+            android:layout_height="match_parent"></ListView>
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

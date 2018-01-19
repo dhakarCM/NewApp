@@ -11,6 +11,7 @@
     <color name="back">#C61063</color>
     <color name="black">#000000</color>
     <color name="navigation">#ED1C24</color>
+    <color name="transparent">#26000000</color>
 
 
 </resources>

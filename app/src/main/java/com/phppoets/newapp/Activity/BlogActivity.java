@@ -6,9 +6,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.phppoets.newapp.Adapter.BlogAdapter;
@@ -16,22 +13,19 @@ import com.phppoets.newapp.Model.blog.BlogResponse;
 import com.phppoets.newapp.R;
 import com.phppoets.newapp.rest.RestClient;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BlogActivity extends AppCompatActivity {
 
-    @BindView(R.id.BackRecycle)
-    ImageView BackRecycle;
-    @BindView(R.id.txtAct)
-    TextView txtAct;
-    @BindView(R.id.imgOption)
-    ImageView imgOption;
-    @BindView(R.id.recyclerView)
+//    @BindView(R.id.BackRecycle)
+//    ImageView BackRecycle;
+//    @BindView(R.id.txtAct)
+//    TextView txtAct;
+//    @BindView(R.id.imgOption)
+//    ImageView imgOption;
+//    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
     BlogResponse blogResponse;
     BlogAdapter blogAdapter;
@@ -40,23 +34,23 @@ public class BlogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog);
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         getBlogList();
     }
-
-    @OnClick({R.id.BackRecycle, R.id.imgOption})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.BackRecycle:
-                break;
-            case R.id.imgOption:
-                break;
-        }
-    }
+//
+//    @OnClick({R.id.BackRecycle, R.id.imgOption})
+//    public void onViewClicked(View view) {
+//        switch (view.getId()) {
+//            case R.id.BackRecycle:
+//                break;
+//            case R.id.imgOption:
+//                break;
+//        }
+//    }
 
     public void getBlogList() {
         //Utils.hideKeyboard(Login.this);

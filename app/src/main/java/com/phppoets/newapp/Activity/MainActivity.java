@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, CheckBoxActivity.class));
+                startActivity(new Intent(MainActivity.this, ChatActivity.class));
             }
         });
         button6 = (Button) findViewById(R.id.button6);

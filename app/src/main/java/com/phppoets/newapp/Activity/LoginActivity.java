@@ -22,6 +22,8 @@ import com.facebook.Profile;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
 import com.phppoets.newapp.Model.login.LoginResponse;
 import com.phppoets.newapp.R;
 import com.phppoets.newapp.rest.RestClient;
@@ -53,17 +55,22 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(AppConfig.KEY_PREFS_NAME, MODE_PRIVATE);
         editText1 = (EditText) findViewById(R.id.editText1);
         editText2 = (EditText) findViewById(R.id.editText2);
-        register = (TextView) findViewById(R.id.txtRegister);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         AppEventsLogger.activateApp(this);
 
+        SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        signInButton.setSize(SignInButton.SIZE_STANDARD);
+
         callbackManager = CallbackManager.Factory.create();
         loginButton = (LoginButton) findViewById(R.id.login_button);
-        loginButton.setReadPermissions("email","public_profile");
+        loginButton.setReadPermissions("email", "public_profile");
 
-        
 
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
 
 
         btn = (Button) findViewById(R.id.loginBtn);
@@ -74,22 +81,13 @@ public class LoginActivity extends AppCompatActivity {
 
                 username = editText1.getText().toString();
                 pass = editText2.getText().toString();
-                if (username.equalsIgnoreCase("")) {
-                    Toast.makeText(LoginActivity.this, "please enter username", Toast.LENGTH_SHORT).show();
-                } else if (username.equalsIgnoreCase("")) {
-                    Toast.makeText(LoginActivity.this, "please enter password", Toast.LENGTH_SHORT).show();
-                } else {
-                    doLogin(username, pass);
-                }
-            }
-        });
 
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
-
+                Intent intent = new Intent(LoginActivity.this, NavigationActivity.class);
+                startActivity(intent);
+                finish();
+//                    doLogin(username, pass);
             }
+
         });
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -100,7 +98,6 @@ public class LoginActivity extends AppCompatActivity {
 //                Intent intent = new Intent(LoginActivity.this, NavigationActivity.class);
 //                startActivity(intent);
 //                finish();
-
 
             }
 
@@ -115,7 +112,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
 
     }
 
@@ -163,16 +165,15 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void setFacebookData(final LoginResult loginResult)
-    {
+    private void setFacebookData(final LoginResult loginResult) {
         GraphRequest request = GraphRequest.newMeRequest(
                 loginResult.getAccessToken(),
                 new GraphRequest.GraphJSONObjectCallback() {
@@ -180,7 +181,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onCompleted(JSONObject object, GraphResponse response) {
                         // Application code
                         try {
-                            Log.i("Response",response.toString());
+                            Log.i("Response", response.toString());
 
                             String email = response.getJSONObject().getString("email");
                             String firstName = response.getJSONObject().getString("first_name");
@@ -188,18 +189,16 @@ public class LoginActivity extends AppCompatActivity {
                             String gender = response.getJSONObject().getString("gender");
 
 
-
                             Profile profile = Profile.getCurrentProfile();
                             String id = profile.getId();
                             String link = profile.getLinkUri().toString();
-                            Log.i("Link",link);
-                            if (Profile.getCurrentProfile()!=null)
-                            {
+                            Log.i("Link", link);
+                            if (Profile.getCurrentProfile() != null) {
                                 Log.i("Login", "ProfilePic" + Profile.getCurrentProfile().getProfilePictureUri(200, 200));
                             }
 
                             Log.i("Login" + "Email", email);
-                            Log.i("Login"+ "FirstName", firstName);
+                            Log.i("Login" + "FirstName", firstName);
                             Log.i("Login" + "LastName", lastName);
                             Log.i("Login" + "Gender", gender);
 
@@ -224,4 +223,6 @@ public class LoginActivity extends AppCompatActivity {
         request.setParameters(parameters);
         request.executeAsync();
     }
+
+
 }

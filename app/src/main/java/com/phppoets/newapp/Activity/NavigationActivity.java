@@ -33,7 +33,6 @@ import com.phppoets.newapp.Adapter.EventHomeAdapter;
 import com.phppoets.newapp.Adapter.HomeMenuAdapter;
 import com.phppoets.newapp.Adapter.InitiativeAdapter;
 import com.phppoets.newapp.Adapter.ViewPagerAdapter;
-import com.phppoets.newapp.MapsActivity;
 import com.phppoets.newapp.Model.event.Eventlist;
 import com.phppoets.newapp.Model.newHome.NewHomeResponse;
 import com.phppoets.newapp.Model.newHome.Slider;
@@ -245,10 +244,6 @@ public class NavigationActivity extends AppCompatActivity
         } else if (id == R.id.nav_Profile) {
             startActivity(new Intent(this, MyActivity.class));
 
-        } else if (id == R.id.nav_Map) {
-            startActivity(new Intent(this, MapsActivity.class));
-
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -334,7 +329,7 @@ public class NavigationActivity extends AppCompatActivity
 
         if (AccessToken.getCurrentAccessToken() == null) {
             return; // already logged out
-        }
+        }else
 
         new GraphRequest(AccessToken.getCurrentAccessToken(), "/me/permissions/", null, HttpMethod.DELETE, new GraphRequest
                 .Callback() {
